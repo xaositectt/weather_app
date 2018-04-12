@@ -2,9 +2,9 @@
 
 const axios = require('axios');
 
-class Api {
+class WeatherData {
 
-  async apiCall(city, country, type) {
+  async getData(city, country, type) {
     const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
     if (type === 'weather' || type === 'forecast') {
       const data = await axios.get(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${apiKey}&units=metric`);
@@ -13,7 +13,7 @@ class Api {
   }
 
   async getForecastData(city, country) {
-    const forecast = this.apiCall(city, country, 'forecast')
+    const forecast = this.getData(city, country, 'forecast')
       .then(result => {
         const forecastData = this.createDateTempObject(result);
         forecastData.description = result.data.list[0].weather[0].description;
@@ -33,14 +33,14 @@ class Api {
     };
     data.data.list.forEach((data, i) => {
       if (i % 8 === 0) {
-        forecastData.forecastTime.push(this.timeConverter(data.dt));
+        forecastData.forecastTime.push(this.convertTimeStamp(data.dt));
         forecastData.forecastTemp.push(data.main.temp);
       }
     });
     return forecastData;
   }
 
-  timeConverter(unixTimestamp) {
+  convertTimeStamp(unixTimestamp) {
     let a = new Date(unixTimestamp * 1000);
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let year = a.getFullYear();
@@ -54,4 +54,4 @@ class Api {
   }
 }
 
-export default Api;
+export default WeatherData;

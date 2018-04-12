@@ -3,11 +3,11 @@ import Titles from './components/titles';
 import Form from './components/form'
 import Weather from './components/weather'
 import LineGraph from './components/linechart';
-import Api from './ajax/apicall';
+import WeatherData from './ajax/getweather';
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
-const ApiCall = new Api();
+const ApiCall = new WeatherData();
 
 class App extends React.Component {
 
