@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.background {
+  background: linear-gradient(to right, #66c2ff, #008ae6);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: lightgreen;
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+*responsivity needs to be adjusted with these numbers. based on mobile screen size
+*/
+.side {
+  border: 0.1px solid black;
+  min-width: 550px;
+  max-height: 100%;
+  flex-grow:1;
+}
+
