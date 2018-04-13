@@ -7,7 +7,7 @@ class WeatherData {
   async getData(city, country, type) {
     const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
     if (type === 'weather' || type === 'forecast') {
-      const data = await axios.get(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${apiKey}&units=metric`);
+      const data = await axios.get(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${apiKey}&units=metric`);
       return data;
     }
   }
