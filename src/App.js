@@ -90,6 +90,21 @@ class App extends React.Component {
         </div>
       </div>
 
+{/* <div class="background">
+<div class="container">
+  <div class="left side">
+    
+
+  </div>
+  <div class="right side">
+    
+
+  </div>
+
+</div>
+
+</div> */}
+
     );
   }
 }
