@@ -53,57 +53,29 @@ class App extends React.Component {
 
   render() {
     return ( 
-      <div>
-        <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-6 title-container">
-                  <div className="titles">
-                    <Titles />
-                    </div>
-                  
-                  <div className="graph">
-                    <LineGraph 
-                    temperatures={this.state.forecastData}
-                    dates={this.state.forecastTimes}
-                    />
-                  </div>
-                </div>
 
-                <div className="col-xs-6 form-container">
-                  <Form getWeather = {this.getWeather}/> 
-                  <div className="weather-info">
-                    <Weather 
-                    temperature={this.state.temperature} 
-                    city={this.state.city}
-                    country={this.state.country}
-                    humidity={this.state.humidity}
-                    description={this.state.description}
-                    error={this.state.error}
-                    />
-                  </div>     
-                </div>
-              </div>
-            </div>
+      <div class="background">
+        <div class="container">
+          <div class="left side">
+            {/* <Titles /> */}
+            {/* <LineGraph 
+            temperatures={this.state.forecastData}
+            dates={this.state.forecastTimes}
+            /> */}
+          </div>
+          <div class="right side">
+          {/* <Form getWeather = {this.getWeather}/>
+          <Weather 
+          temperature={this.state.temperature} 
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+          /> */}
           </div>
         </div>
       </div>
-
-{/* <div class="background">
-<div class="container">
-  <div class="left side">
-    
-
-  </div>
-  <div class="right side">
-    
-
-  </div>
-
-</div>
-
-</div> */}
 
     );
   }
