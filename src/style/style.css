@@ -14,8 +14,10 @@
 
 .container {
   background-color: lightgreen;
-  height: 90vh;
+  box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
   width: 90%;
+  min-height: 500px;
+  min-width: 550px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -24,9 +26,23 @@
 *responsivity needs to be adjusted with these numbers. based on mobile screen size
 */
 .side {
-  border: 0.1px solid black;
+  /*border: 0.1px solid black;*/
   min-width: 550px;
-  max-height: 100%;
+  max-height: 90%;
   flex-grow:1;
+}
+
+.left {
+  background: url("img/landscape.jpg") center center no-repeat;
+}
+
+.right {
+  background-color: #0364a9;
+}
+
+@media only screen and (max-width: 600px) {
+  .background {
+      background-color: lightblue;
+  }
 }
 
