@@ -6,7 +6,7 @@ const LineGraph = (props) => {
     labels: props.dates,
     datasets: [
       {
-        label: 'five day temperature prediction',
+        label: 'Temperature',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',

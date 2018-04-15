@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Titles = () => (
+const Titles = (props) => (
   
   <div>
     <h1 className="titles">Weather Finder</h1>
-    <p className="subtitles"> Five day temperature forecast </p>
+    <p className="subtitles"> {props.city} weather conditions </p>
   </div>
 );
 

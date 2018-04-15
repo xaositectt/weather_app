@@ -57,26 +57,27 @@ class App extends React.Component {
       <div class="background">
         <div class="container">
           <div class="left side">
-            <Titles />
+            <Titles city={this.state.city}/>
             <div className="graph">
-              <LineGraph 
-              temperatures={this.state.forecastData}
-              dates={this.state.forecastTimes}
+              <Weather 
+              temperature={this.state.temperature} 
+              city={this.state.city}
+              country={this.state.country}
+              humidity={this.state.humidity}
+              description={this.state.description}
+              forecastTimes={this.forecastTimes}
+              forecastData={this.forecastData}
+              error={this.state.error}
               />
+              
             </div>
           </div>
           <div class="right side">
-          <Form getWeather = {this.getWeather}/>
-          <Weather 
-          temperature={this.state.temperature} 
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          forecastTimes={this.forecastTimes}
-          forecastData={this.forecastData}
-          error={this.state.error}
-          />
+            <Form getWeather = {this.getWeather}/>
+            <LineGraph 
+              temperatures={this.state.forecastData}
+              dates={this.state.forecastTimes}
+              />
           </div>
         </div>
       </div>
