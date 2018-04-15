@@ -6,7 +6,7 @@ const LineGraph = (props) => {
     labels: props.dates,
     datasets: [
       {
-        label: 'Daily temperature forecast',
+        label: 'five day temperature prediction',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -26,11 +26,19 @@ const LineGraph = (props) => {
         pointHitRadius: 10,
         data: props.temperatures,
       }
-    ]
+    ],
+  };
+
+  const options  = {
+    legend: {
+      display: false,
+    },
   };
 
   return (
-    <Line data={data}/>
+    <Line data={data}
+    options={options}
+    />
   )
 }
 
