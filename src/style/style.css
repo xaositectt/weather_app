@@ -83,7 +83,7 @@ input[type="text"] {
   font-weight: lighter;
   letter-spacing: 2px;
   margin-bottom: 30px;
-  margin-right: 20px;
+  margin-right: 1.5vw;
   font-size: 1.3vw;
 }
 
@@ -94,7 +94,7 @@ input[type="text"] {
 
 button {
   border: 0;
-  padding: 8px 20px;
+  padding: 1vw 2vw;
   margin: 0 2px;
   border-radius: 2px;
   font-weight: lighter;
@@ -118,6 +118,25 @@ button:active {
   padding: 1vw 0vw 0 0vw;
 }
 
+.weather__value {
+  color: #925b4d;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,s
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #203130;
+  -webkit-box-shadow: 0 0 0px 1000px #6d8d8c inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /*
 * media queries for small screens if you adjust size. It still doesn't work for a certain small size on mobile.
 */
@@ -131,15 +150,37 @@ button:active {
   .subtitles {
     font-size: 16px;
   }
+
+  .weather__key {
+    font-size: 14px;
+  }
+
+  input[type="text"] {
+    width: 26%;
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+  }
 }
 
 @media all and (max-width: 420px) {
   .titles {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .subtitles {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .weather__key {
+    font-size: 16px;
+  }
+
+  input[type="text"] {
+    width: 32%;
+    font-size: 12px;
   }
 }
 

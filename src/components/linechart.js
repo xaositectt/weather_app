@@ -34,6 +34,22 @@ const LineGraph = (props) => {
     legend: {
       display: false,
     },
+    scales: {
+        xAxes: [{
+            ticks: {
+                autoSkip: false,
+                maxRotation: 0,
+                minRotation: 0,
+                fontSize: 8
+            }
+        }],
+        yAxes: [{
+          ticks: {
+              fontSize: 8
+          }
+      }],
+    }
+  
   };
 
   return (

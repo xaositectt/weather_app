@@ -25,8 +25,8 @@ class App extends React.Component {
   setStateData = (data) => {
       this.setState({
         temperature: data.currentTemp,
-        city: data.city,
-        country: data.country,
+        city: this.capitalize(data.city),
+        country: data.country.toUpperCase(),
         humidity: data.humidity,
         description: data.description,
         forecastData: data.forecastTemp,
@@ -35,6 +35,8 @@ class App extends React.Component {
       });
   }
 
+  capitalize = (s) => s[0].toUpperCase() + s.slice(1);
+  
   getWeather = async (e) => {
     e.preventDefault();
 
@@ -54,9 +56,9 @@ class App extends React.Component {
   render() {
     return ( 
 
-      <div class="background">
-        <div class="container">
-          <div class="left side">
+      <div className="background">
+        <div className="container">
+          <div className="left side">
             <Titles city={this.state.city}/>
             <div className="graph">
               <Weather 
@@ -72,7 +74,7 @@ class App extends React.Component {
               
             </div>
           </div>
-          <div class="right side">
+          <div className="right side">
             <Form getWeather = {this.getWeather}/>
             <LineGraph 
               temperatures={this.state.forecastData}
@@ -81,7 +83,6 @@ class App extends React.Component {
           </div>
         </div>
       </div>
-
     );
   }
 }
