@@ -4,6 +4,7 @@ import Form from './components/form'
 import Weather from './components/weather'
 import LineGraph from './components/linechart';
 import WeatherData from './ajax/getweather';
+import ChartText from './components/charttext'
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
@@ -76,6 +77,7 @@ class App extends React.Component {
           </div>
           <div className="right side">
             <Form getWeather = {this.getWeather}/>
+            <ChartText city={this.state.city} country={this.state.country}/>
             <LineGraph 
               temperatures={this.state.forecastData}
               dates={this.state.forecastTimes}

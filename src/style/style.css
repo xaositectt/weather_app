@@ -122,6 +122,13 @@ button:active {
   color: #925b4d;
 }
 
+.charttext {
+  margin-left: 1.5vw;
+  color: #374a49;
+  font-size: 1.5vw;
+  letter-spacing: 0.12vw;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus
@@ -155,6 +162,10 @@ select:-webkit-autofill:focus {
     font-size: 14px;
   }
 
+  .charttext {
+    font-size: 14px;
+  }
+
   input[type="text"] {
     width: 26%;
     font-size: 12px;
@@ -176,6 +187,10 @@ select:-webkit-autofill:focus {
 
   .weather__key {
     font-size: 16px;
+  }
+
+  .charttext {
+    font-size: 18px;
   }
 
   input[type="text"] {
