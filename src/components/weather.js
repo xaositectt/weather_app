@@ -1,4 +1,5 @@
 import React from 'react';
+import LineGraph from './linechart';
 
 const Weather = props => (
   // className="weather__info"

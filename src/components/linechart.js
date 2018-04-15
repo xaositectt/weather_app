@@ -30,15 +30,15 @@ const LineGraph = (props) => {
   };
 
   const options  = {
+    maintainAspectRatio: false,
     legend: {
       display: false,
     },
   };
 
   return (
-    <Line data={data}
-    options={options}
-    />
+    <div>
+    { props.dates && props.temperatures && <Line data={data} options={options} />} </div> 
   )
 }
 
