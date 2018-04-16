@@ -5,6 +5,7 @@ import Weather from './components/weather'
 import LineGraph from './components/linechart';
 import WeatherData from './ajax/getweather';
 import ChartText from './components/charttext'
+import RightBasicWeather from './components/rightsidebasic'
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
@@ -61,28 +62,25 @@ class App extends React.Component {
         <div className="container">
           <div className="left side">
             <Titles city={this.state.city}/>
-            <div className="graph">
-              <Weather 
-              temperature={this.state.temperature} 
-              city={this.state.city}
-              country={this.state.country}
-              humidity={this.state.humidity}
-              description={this.state.description}
-              forecastTimes={this.forecastTimes}
-              forecastData={this.forecastData}
-              error={this.state.error}
-              />
+            <Weather 
+            temperature={this.state.temperature} 
+            city={this.state.city}
+            country={this.state.country}
+            humidity={this.state.humidity}
+            description={this.state.description}
+            forecastTimes={this.forecastTimes}
+            forecastData={this.forecastData}
+            error={this.state.error}
+            />
               
-            </div>
-          </div>
-          <div className="right side">
-            <Form getWeather = {this.getWeather}/>
-            <ChartText city={this.state.city} country={this.state.country}/>
-            <LineGraph 
-              temperatures={this.state.forecastData}
-              dates={this.state.forecastTimes}
-              />
-          </div>
+          </div>        
+            <RightBasicWeather
+            getWeather={this.getWeather}
+            city={this.state.city}
+            country={this.state.country}
+            temperatures={this.state.forecastData}
+            dates={this.state.forecastTimes}
+            />
         </div>
       </div>
     );

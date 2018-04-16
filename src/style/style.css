@@ -68,10 +68,6 @@ body {
   letter-spacing: 0.12vw;
 }
 
-/* .graph {
-  width: 60%;
-} */
-
 input[type="text"] {
   background-color: transparent;
   color: #2a4342;
