@@ -24,7 +24,7 @@ const LineGraph = (props) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: props.temperatures,
+        data: props.data,
       }
     ],
   };
@@ -54,7 +54,7 @@ const LineGraph = (props) => {
 
   return (
     <div>
-    { props.dates && props.temperatures && <Line data={data} options={options} />} </div> 
+    <Line data={data} options={options} /></div> 
   )
 }
 

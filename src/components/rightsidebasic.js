@@ -6,9 +6,9 @@ import LineGraph from './linechart';
 const RightSideBasic = (props) => {
   return (
     <div  className="right side">
-      <Form getWeather = {props.getWeather}/>
+      <Form getWeather={props.getWeather} error={props.error}/>
       <ChartText city={props.city} country={props.country}/>
-      <LineGraph temperatures={props.temperatures} dates={props.dates}/>
+      <LineGraph data={props.temperatures} dates={props.dates}/>  
     </div>
   )
 }

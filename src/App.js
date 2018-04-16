@@ -7,6 +7,12 @@ import WeatherData from './ajax/getweather';
 import ChartText from './components/charttext';
 import RightSideBasic from './components/rightsidebasic';
 import LeftSideBasic from './components/leftsidebasic';
+import RightSideAdvanced from './components/rightsideadvanced';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
@@ -20,9 +26,13 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    forecastData: undefined,
+    forecastTemp: undefined,
     forecastTimes: undefined,
-    error: undefined
+    forecastHumidity: undefined,
+    forecastClouds: undefined,
+    forecastWind: undefined,
+    forecastDescription: undefined,
+    error: undefined,
   }
 
   setStateData = (data) => {
@@ -32,9 +42,13 @@ class App extends React.Component {
         country: data.country.toUpperCase(),
         humidity: data.humidity,
         description: data.description,
-        forecastData: data.forecastTemp,
+        forecastTemp: data.forecastTemp,
         forecastTimes: data.forecastTime,
-        error: data.error,
+        forecastHumidity: data.forecastHumidity,
+        forecastClouds: data.forecastClouds,
+        forecastWind: data.forecastWind,
+        forecastDescription: data.forecastDescription,
+        error: undefined,
       });
   }
 
@@ -49,39 +63,49 @@ class App extends React.Component {
     const weatherData = await ApiCall.getForecastData(city, country);
     console.log(weatherData);
 
-    if (weatherData) {
+    if (!weatherData.message) {
       this.setStateData(weatherData);
     } else {
-      
+      this.setState({
+        error: 'Invalid input data.',
+      });
     }
   }
 
   render() {
     return ( 
+      <HashRouter>
+        <div className="background">
+          <div className="links"><NavLink to="/" className="linkleft">basic</NavLink >
+          <NavLink to="/advanced" className="linkright">advanced</NavLink><div>
+          <div className="container">
 
-      <div className="background">
-        <div className="container">
-
-          <LeftSideBasic 
-           city={this.state.city}
-           country={this.state.country}
-           temperature={this.state.temperature}
-           humidity={this.state.humidity}
-           description={this.state.description}
-           forecastTimes={this.forecastTimes}
-           forecastData={this.forecastData}
-          />
-
-          <RightSideBasic
-          getWeather={this.getWeather}
-          city={this.state.city}
-          country={this.state.country}
-          temperatures={this.state.forecastData}
-          dates={this.state.forecastTimes}
-          />
-          
+            <LeftSideBasic 
+            city={this.state.city}
+            country={this.state.country}
+            temperature={this.state.temperature}
+            humidity={this.state.humidity}
+            description={this.state.description}
+            forecastTimes={this.forecastTimes}
+            forecastData={this.forecastData}
+            />
+            
+            
+            <Route path="/basic"  render={() => <RightSideBasic
+                                                getWeather={this.getWeather}
+                                                city={this.state.city}
+                                                country={this.state.country}
+                                                temperatures={this.state.forecastTemp}
+                                                dates={this.state.forecastTimes}
+                                                descriptions={this.state.forecastDescription}
+                                                error={this.state.error}
+                                                />} />
+            
+            <Route path="/advanced"  render={() => <RightSideAdvanced
+                                                />} />
+          </div>
         </div>
-      </div>
+      </HashRouter>
     );
   }
 }

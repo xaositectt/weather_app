@@ -68,13 +68,18 @@ body {
   letter-spacing: 0.12vw;
 }
 
+.linkleft, .linkright {
+  background-color: #99aea7;
+  text-decoration: none;
+}
+
 input[type="text"] {
   background-color: transparent;
   color: #2a4342;
   border: 0;
   border-bottom: solid 1px #2d4544;
   width: 20%;
-  margin: 1.5vw;
+  margin: 1.5vw 0 0 1.5vw;
   margin-top: 6vw;
   font-weight: lighter;
   letter-spacing: 2px;
@@ -123,6 +128,13 @@ button:active {
   color: #374a49;
   font-size: 1.5vw;
   letter-spacing: 0.12vw;
+}
+
+.error {
+  color: #2a4342;
+  font-size: 1.3vw;
+  margin-left: 1.5vw;
+  padding: 1vw 0vw 0 0vw;
 }
 
 input:-webkit-autofill,
