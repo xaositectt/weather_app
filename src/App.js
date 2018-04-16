@@ -4,8 +4,9 @@ import Form from './components/form'
 import Weather from './components/weather'
 import LineGraph from './components/linechart';
 import WeatherData from './ajax/getweather';
-import ChartText from './components/charttext'
-import RightBasicWeather from './components/rightsidebasic'
+import ChartText from './components/charttext';
+import RightSideBasic from './components/rightsidebasic';
+import LeftSideBasic from './components/leftsidebasic';
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
@@ -60,27 +61,25 @@ class App extends React.Component {
 
       <div className="background">
         <div className="container">
-          <div className="left side">
-            <Titles city={this.state.city}/>
-            <Weather 
-            temperature={this.state.temperature} 
-            city={this.state.city}
-            country={this.state.country}
-            humidity={this.state.humidity}
-            description={this.state.description}
-            forecastTimes={this.forecastTimes}
-            forecastData={this.forecastData}
-            error={this.state.error}
-            />
-              
-          </div>        
-            <RightBasicWeather
-            getWeather={this.getWeather}
-            city={this.state.city}
-            country={this.state.country}
-            temperatures={this.state.forecastData}
-            dates={this.state.forecastTimes}
-            />
+
+          <LeftSideBasic 
+           city={this.state.city}
+           country={this.state.country}
+           temperature={this.state.temperature}
+           humidity={this.state.humidity}
+           description={this.state.description}
+           forecastTimes={this.forecastTimes}
+           forecastData={this.forecastData}
+          />
+
+          <RightSideBasic
+          getWeather={this.getWeather}
+          city={this.state.city}
+          country={this.state.country}
+          temperatures={this.state.forecastData}
+          dates={this.state.forecastTimes}
+          />
+          
         </div>
       </div>
     );

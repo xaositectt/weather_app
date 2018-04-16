@@ -3,7 +3,7 @@ import Form from './form';
 import ChartText from './charttext';
 import LineGraph from './linechart';
 
-const RightBasicWeather = (props) => {
+const RightSideBasic = (props) => {
   return (
     <div  className="right side">
       <Form getWeather = {props.getWeather}/>
@@ -13,4 +13,4 @@ const RightBasicWeather = (props) => {
   )
 }
 
-export default RightBasicWeather;
+export default RightSideBasic;
