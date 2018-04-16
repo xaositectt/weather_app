@@ -76,8 +76,10 @@ class App extends React.Component {
     return ( 
       <HashRouter>
         <div className="background">
-          <div className="links"><NavLink to="/" className="linkleft">basic</NavLink >
-          <NavLink to="/advanced" className="linkright">advanced</NavLink><div>
+          
+          <div className="links"><NavLink to="/basic" className="linkleft">basic</NavLink >
+          <NavLink to="/more" className="linkright">more</NavLink></div>
+
           <div className="container">
 
             <LeftSideBasic 
@@ -101,7 +103,12 @@ class App extends React.Component {
                                                 error={this.state.error}
                                                 />} />
             
-            <Route path="/advanced"  render={() => <RightSideAdvanced
+            <Route path="/more"  render={() => <RightSideAdvanced
+                                                    city={this.state.city}
+                                                    dates={this.state.forecastTimes}
+                                                    humidity={this.state.forecastHumidity}
+                                                    clouds={this.state.forecastClouds}
+                                                    wind={this.state.forecastWind}
                                                 />} />
           </div>
         </div>

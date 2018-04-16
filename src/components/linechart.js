@@ -31,6 +31,7 @@ const LineGraph = (props) => {
 
   const options  = {
     maintainAspectRatio: false,
+    responsive: true,
     legend: {
       display: false,
     },

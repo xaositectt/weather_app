@@ -6,7 +6,6 @@ const LeftSideBasic = (props) => {
   return (
 
     <div  className="left side">
-
       <Titles city={props.city}/>
       <Weather 
       temperature={props.temperature} 
