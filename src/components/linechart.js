@@ -46,7 +46,7 @@ const LineGraph = (props) => {
         }],
         yAxes: [{
           ticks: {
-              fontSize: 8
+              fontSize: 9
           }
       }],
     }
@@ -55,7 +55,7 @@ const LineGraph = (props) => {
 
   return (
     <div>
-       { !props.error &&  <Line data={data} options={options} /> }
+       <Line data={data} options={options} /> 
    </div> 
   )
 }

@@ -77,7 +77,7 @@ class App extends React.Component {
       <HashRouter>
         <div className="background">
           
-          <div className="links"><NavLink to="/basic" className="linkleft">basic</NavLink >
+          <div className="links"><NavLink to="/" className="linkleft">basic</NavLink >
           <NavLink to="/advanced" className="linkright">more</NavLink></div>
 
           <div className="container">
@@ -93,7 +93,7 @@ class App extends React.Component {
             />
             
             
-            <Route path="/basic"  render={() => <RightSideBasic
+            <Route path="/"  render={() => <RightSideBasic
                                                 getWeather={this.getWeather}
                                                 city={this.state.city}
                                                 country={this.state.country}
