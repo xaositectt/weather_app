@@ -7,8 +7,8 @@ const RightSideBasic = (props) => {
   return (
     <div  className="right side">
       <Form getWeather={props.getWeather} error={props.error}/>
-      <ChartText city={props.city} country={props.country} type="Temperature"/>
-      <LineGraph data={props.temperatures} dates={props.dates}/>  
+      <ChartText city={props.city} country={props.country}/>
+      <LineGraph data={props.temperatures} dates={props.dates}  type="Temperature, °C"/>  
       { props.error && <p className="error">{props.error}</p> }
     </div>
   )
