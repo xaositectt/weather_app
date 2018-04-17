@@ -6,7 +6,7 @@ const LineGraph = (props) => {
     labels: props.dates,
     datasets: [
       {
-        label: 'Temperature',
+        label: props.type,
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -55,7 +55,8 @@ const LineGraph = (props) => {
 
   return (
     <div>
-    <Line data={data} options={options} /></div> 
+       { !props.error &&  <Line data={data} options={options} /> }
+   </div> 
   )
 }
 

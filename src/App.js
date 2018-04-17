@@ -78,7 +78,7 @@ class App extends React.Component {
         <div className="background">
           
           <div className="links"><NavLink to="/basic" className="linkleft">basic</NavLink >
-          <NavLink to="/more" className="linkright">more</NavLink></div>
+          <NavLink to="/advanced" className="linkright">more</NavLink></div>
 
           <div className="container">
 
@@ -103,12 +103,13 @@ class App extends React.Component {
                                                 error={this.state.error}
                                                 />} />
             
-            <Route path="/more"  render={() => <RightSideAdvanced
+            <Route path="/advanced"  render={() => <RightSideAdvanced
                                                     city={this.state.city}
                                                     dates={this.state.forecastTimes}
                                                     humidity={this.state.forecastHumidity}
                                                     clouds={this.state.forecastClouds}
                                                     wind={this.state.forecastWind}
+                                                    error={this.state.error}
                                                 />} />
           </div>
         </div>

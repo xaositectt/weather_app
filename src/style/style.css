@@ -153,9 +153,9 @@ button:active {
 }
 
 .error {
-  color: #2a4342;
+  color: #bd573c;
   font-size: 1.3vw;
-  margin-left: 1.5vw;
+  margin-left: 2vw;
   padding: 1vw 0vw 0 0vw;
 }
 
@@ -214,6 +214,10 @@ select:-webkit-autofill:focus {
   .links {
     margin-top: 1vw;
     top: 3%;
+  }
+
+  .error {
+    font-size: 12px;
   }
 
   .linkleft, .linkright {
