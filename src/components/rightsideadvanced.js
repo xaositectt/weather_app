@@ -13,9 +13,7 @@ const RightSideAdvanced = (props) => {
         <p className="charttext">clouds</p>
         <LineGraph  data={props.clouds} dates={props.dates} type="Cloudiness, %"/>  
       </div>
-      {/* <div className="graph"> 
-        <LineGraph  data={props.temperatures} dates={props.dates} />
-      </div> */}
+      
     </div>
   )
 };

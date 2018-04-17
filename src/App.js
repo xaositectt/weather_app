@@ -9,10 +9,11 @@ import RightSideBasic from './components/rightsidebasic';
 import LeftSideBasic from './components/leftsidebasic';
 import RightSideAdvanced from './components/rightsideadvanced';
 import {
+  BrowserRouter as Router,
+  Link,
   Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
+  Switch,
+} from 'react-router-dom';
 
 const apiKey = '553f94efb2565a49ff9a7fe5aa050558';
 
@@ -74,11 +75,15 @@ class App extends React.Component {
 
   render() {
     return ( 
-      <HashRouter>
+      <Router>
         <div className="background">
-        
-          <div className="links"><NavLink to="/" className="linkleft">basic</NavLink >
-          <NavLink to="/advanced" className="linkright">more</NavLink></div>
+          
+          <div className="links">
+
+          <Link to="/" className="linkleft">basic</Link >{' '}
+          <Link to="/advanced" className="linkright">more</Link>{' '}
+          
+          </div>
 
           <div className="container">
 
@@ -92,28 +97,32 @@ class App extends React.Component {
             forecastData={this.forecastData}
             />
             
-            
-            <Route path="/"  render={() => <RightSideBasic
-                                                getWeather={this.getWeather}
-                                                city={this.state.city}
-                                                country={this.state.country}
-                                                temperatures={this.state.forecastTemp}
-                                                dates={this.state.forecastTimes}
-                                                descriptions={this.state.forecastDescription}
-                                                error={this.state.error}
-                                                />} />
-            
-            <Route path="/advanced"  render={() => <RightSideAdvanced
-                                                    city={this.state.city}
-                                                    dates={this.state.forecastTimes}
-                                                    humidity={this.state.forecastHumidity}
-                                                    clouds={this.state.forecastClouds}
-                                                    wind={this.state.forecastWind}
-                                                    error={this.state.error}
-                                                />} />
+            <Switch>
+              <Route exact path="/"  render={() => <RightSideBasic
+                                                  getWeather={this.getWeather}
+                                                  city={this.state.city}
+                                                  country={this.state.country}
+                                                  temperatures={this.state.forecastTemp}
+                                                  dates={this.state.forecastTimes}
+                                                  descriptions={this.state.forecastDescription}
+                                                  error={this.state.error}
+                                                  />} />
+              
+              <Route exact path="/advanced"  render={() => <RightSideAdvanced
+                                                      city={this.state.city}
+                                                      dates={this.state.forecastTimes}
+                                                      humidity={this.state.forecastHumidity}
+                                                      clouds={this.state.forecastClouds}
+                                                      wind={this.state.forecastWind}
+                                                      error={this.state.error}
+                                                  />} />
+             
+
+            </Switch>
+
           </div>
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
