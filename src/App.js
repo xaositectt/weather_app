@@ -76,8 +76,7 @@ class App extends React.Component {
     return ( 
       <HashRouter>
         <div className="background">
-          
-          //why doesn't this fucking router work
+        
           <div className="links"><NavLink to="/" className="linkleft">basic</NavLink >
           <NavLink to="/advanced" className="linkright">more</NavLink></div>
 
